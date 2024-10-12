@@ -1,6 +1,10 @@
 # Assignment 3 - Creating a Restaurant Rating Site
 
 ## Author
+Name: Revelle Williams
+CIS 218: Django Project
+Date: October 10, 2024
+
 
 
 
@@ -127,9 +131,11 @@ You should also be able to load bootstrap via a CDN link which will save you fro
 | **Extra Credit** Full Heroku Deployment  |   **5**|
 
 ## Outside Resources Used
-
+TestBook
+Videos
+Tutor
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
-
+None
 

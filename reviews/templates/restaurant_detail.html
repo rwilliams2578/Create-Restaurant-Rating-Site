@@ -1,0 +1,41 @@
+<!--
+Name: Revelle Williams
+CIS 218: Django Project
+Date: October 10, 2024
+-->
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">{{ restaurant.name }}</h1>
+
+{% if average_rating %}
+    <p class="lead">Average Rating: {{ average_rating|floatformat:1 }} / 5</p>
+{% else %}
+    <p class="lead">No ratings yet</p>
+{% endif %}
+
+<a href="{% url 'add_review' restaurant.pk %}" class="btn btn-primary mb-4">Add a Review</a>
+
+<h2>Reviews:</h2>
+{% if reviews %}
+    <div class="row">
+    {% for review in reviews %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ review.rating }} / 5</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">By {{ review.user.username }}</h6>
+                    <p class="card-text">{{ review.comment }}</p>
+                    <p class="card-text"><small class="text-muted">Posted on: {{ review.created|date:"F d, Y" }}</small></p>
+                    <a href="{% url 'review_detail' review.pk %}" class="btn btn-sm btn-outline-secondary">View full review</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No reviews yet.</p>
+{% endif %}
+
+<a href="{% url 'home' %}" class="btn btn-secondary mt-3">Back to Restaurant List</a>
+{% endblock %}

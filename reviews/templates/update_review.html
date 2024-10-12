@@ -1,0 +1,18 @@
+<!--
+Name: Revelle Williams
+CIS 218: Django Project
+Date: October 10, 2024
+-->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Update Review for {{ restaurant.name }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Review</button>
+</form>
+
+<a href="{% url 'review_detail' review.pk %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!--
+Name: Revelle Williams
+CIS 218: Django Project
+Date: October 10, 2024
+-->
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Review for {{ restaurant.name }}</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Rating: {{ review.rating }} / 5</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Reviewer: {{ review.user.username }}</h6>
+        <p class="card-text">{{ review.comment }}</p>
+        <p class="card-text"><small class="text-muted">Date: {{ review.created|date:"F d, Y" }}</small></p>
+
+        {% if user == review.user %}
+            <a href="{% url 'update_review' review.pk %}" class="btn btn-primary">Update Review</a>
+            <a href="{% url 'delete_review' review.pk %}" class="btn btn-danger">Delete Review</a>
+        {% endif %}
+    </div>
+</div>
+
+<a href="{% url 'restaurant_detail' restaurant.pk %}" class="btn btn-secondary mt-3">Back to {{ restaurant.name }}</a>
+{% endblock %}
