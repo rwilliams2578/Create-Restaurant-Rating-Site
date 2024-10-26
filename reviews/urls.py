@@ -12,9 +12,6 @@ from .views import (
     ReviewDetailView,
     UpdateReviewView,
     DeleteReviewView,
-    CustomLoginView,
-    CustomLogoutView,
-    SignUpView,
 )
 
 urlpatterns = [
@@ -24,7 +21,4 @@ urlpatterns = [
     path("review/<int:pk>/", ReviewDetailView.as_view(), name="review_detail"),
     path("review/<int:pk>/update/", UpdateReviewView.as_view(), name="update_review"),
     path("review/<int:pk>/delete/", DeleteReviewView.as_view(), name="delete_review"),
-    path("login/", CustomLoginView.as_view(), name="login"),
-    path("logout/", CustomLogoutView.as_view(), name="logout"),
-    path("signup/", SignUpView.as_view(), name="signup"),
 ]

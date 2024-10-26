@@ -15,8 +15,8 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = ["rating", "comment"]
+        fields = ["rating", "body"]
         widgets = {
             "rating": forms.Select(choices=[(i, i) for i in range(1, 6)]),
-            "comment": forms.Textarea(attrs={"rows": 4}),
+            "body": forms.Textarea(attrs={"rows": 4}),
         }

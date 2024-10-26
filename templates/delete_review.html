@@ -15,8 +15,8 @@ Date: October 10, 2024
     <h2>Rating: {{ review.rating }} / 5</h2>
     <p><strong>Reviewer:</strong> {{ review.user.username }}</p>
     <p><strong>Date:</strong> {{ review.created|date:"F d, Y" }}</p>
-    <h3>Comment:</h3>
-    <p>{{ review.comment }}</p>
+    <h3>Body:</h3>
+    <p>{{ review.body }}</p>
 </div>
 
 <form method="post">

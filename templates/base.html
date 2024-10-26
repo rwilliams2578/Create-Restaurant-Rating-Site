@@ -30,16 +30,16 @@ Date: October 10, 2024
                             <span class="nav-link">Welcome, {{ user.username }}</span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                        </li>
-                    {% endif %}
+                          <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+                      </li>
+                  {% else %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a>
+                      </li>
+                  {% endif %}
                 </ul>
             </div>
         </div>
