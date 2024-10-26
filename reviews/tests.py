@@ -16,6 +16,8 @@ class ModelTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
+        """Set up test data"""
+
         cls.user = User.objects.create_user(username="testuser", password="12345")
         cls.restaurant = Restaurant.objects.create(name="Test Restaurant")
 
